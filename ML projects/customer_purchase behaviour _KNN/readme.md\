@@ -1,0 +1,172 @@
+Customer Purchase Prediction Using K-Nearest Neighbors (KNN)
+
+1. Project Overview
+
+This project focuses on predicting customer purchase behavior using Machine Learning. The K-Nearest Neighbors (KNN) classification algorithm is used to predict whether a customer will make a purchase based on customer-related attributes.
+
+The project explores feature selection, data preprocessing, feature scaling, hyperparameter tuning, and model evaluation to understand how different customer attributes influence prediction performance.
+
+2. Project Objectives
+
+- Develop a machine learning model to predict customer purchase behavior.
+- Analyze customer data using exploratory data analysis.
+- Understand the importance of feature selection.
+- Apply feature scaling using StandardScaler.
+- Optimize the KNN model by experimenting with different K values.
+- Evaluate model performance using classification metrics.
+
+ 3. Technologies and Libraries
+
+- Programming Language: Python
+- Data Analysis: Pandas, NumPy
+- Data Visualization: Matplotlib, Seaborn
+- Machine Learning: Scikit-learn
+- Development Environment: Google Colab
+
+ 4. Dataset Description
+
+The dataset contains 1,500 customer records and 9 columns, including 8 input features and 1 target variable.
+
+ Input Features
+
+| Feature | Description |
+|---|---|
+| Age | Customer age |
+| Gender | Customer gender |
+| AnnualIncome | Customer annual income |
+| NumberOfPurchases | Number of purchases made |
+| ProductCategory | Product category |
+| TimeSpentOnWebsite | Time spent on the website |
+| LoyaltyProgram | Customer loyalty program participation |
+| DiscountsAvailed | Number of discounts availed |
+
+ Target Variable
+
+PurchaseStatus
+
+- 0: No Purchase
+- 1: Purchase
+
+ 5. Project Workflow
+
+1. Import the required Python libraries.
+2. Load the customer dataset using Pandas.
+3. Perform data exploration and inspection.
+4. Conduct exploratory data analysis using Seaborn and Matplotlib.
+5. Separate input features and the target variable.
+6. Split the dataset into training and testing sets using an 80:20 ratio.
+7. Apply feature scaling using StandardScaler.
+8. Build and train the KNN classification model.
+9. Generate predictions using the test dataset.
+10. Evaluate model performance.
+11. Perform hyperparameter tuning using cross-validation.
+
+ 6. Algorithm: K-Nearest Neighbors
+
+K-Nearest Neighbors is a supervised Machine Learning algorithm used for classification and regression tasks.
+
+In this project, KNN predicts customer purchase status by identifying the nearest data points based on feature distances. The final prediction is determined through majority voting among the selected nearest neighbors.
+
+StandardScaler is used to normalize feature scales before applying the KNN algorithm.
+
+ 7. Model Experiments and Results
+
+### Experiment 1: Three Input Features
+
+The initial model uses the following features:
+
+- AnnualIncome
+- NumberOfPurchases
+- TimeSpentOnWebsite
+
+| K Value | Test Accuracy |
+|---|---:|
+| 5 | 69% |
+| 21 | 66% |
+
+ Experiment 2: All Eight Input Features
+
+The second experiment uses all eight input features to improve the model's ability to identify customer purchasing patterns.
+
+Cross-validation was performed using five folds to compare different K values.
+
+| K Value | Average Cross-Validation Accuracy |
+|---|---:|
+| 1 | 80.33% |
+| 3 | 81.50% |
+| 5 | 83.08% |
+| 7 | 84.08% |
+| 9 | 84.25% |
+| 11 | 83.92% |
+| 13 | 83.92% |
+| 15 | 82.83% |
+| 17 | 82.33% |
+| 19 | 82.17% |
+| 21 | 82.42% |
+| 23 | 82.58% |
+| 25 | 81.50% |
+| 27 | 81.75% |
+| 29 | 81.42% |
+| 31 | 81.42% |
+
+The highest average cross-validation accuracy among the tested values was achieved at K = 9, with 84.25%.
+
+ Experiment 3: Test Evaluation Using All Eight Features (K = 5)
+
+The KNN model with K = 5 achieved the following test results:
+
+Test Accuracy: 85%
+
+Correct predictions: 255 out of 300 test records.
+
+ Confusion Matrix
+
+```text
+[[145  25]
+ [ 20 110]]
+```
+
+ Classification Report
+
+| Class | Precision | Recall | F1-Score |
+|---|---:|---:|---:|
+| No Purchase (0) | 0.88 | 0.85 | 0.87 |
+| Purchase (1) | 0.81 | 0.85 | 0.83 |
+
+The results indicate that using all eight input features improved test accuracy compared with the initial three-feature model.
+
+Note: K = 5 achieved 85% test accuracy, while K = 9 achieved the highest average cross-validation accuracy among the tested values. These are separate experimental results.
+
+ 8. Key Learnings
+
+Through this project, the following concepts were explored:
+
+- Supervised Machine Learning
+- Data loading and preprocessing
+- Exploratory Data Analysis
+- Feature selection and target separation
+- Training and testing data splitting
+- Feature scaling using StandardScaler
+- KNN classification
+- Hyperparameter tuning
+- Cross-validation
+- Confusion matrix and classification report
+- Model performance evaluation
+
+ 9. Future Enhancements
+
+- Improve categorical feature encoding.
+- Explore additional feature-selection techniques.
+- Perform further hyperparameter optimization.
+- Evaluate the model on independent customer datasets.
+- Develop a web application for customer purchase prediction.
+
+ 10. Author
+
+Adhithyan D
+
+B.Tech, Computer Science and Engineering
+
+GitHub: https://github.com/ADHITHYAN0520
+
+LinkedIn: https://linkedin.com/in/adhithyan05
